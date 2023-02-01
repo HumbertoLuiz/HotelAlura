@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html layout:decorate="~{/shared/layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Add Guest</title>
+</head>
+
+<body>
+
+	<div layout:fragment="content">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Guest Registration</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item active">Guest Registration</li>
+						</ol>
+					</div>
+				</div>
+			</div><!-- /.container-fluid -->
+		</section>
+
+		<!-- Main content -->
+		<section class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<!-- left column -->
+					<div class="col-md-12">
+						<!-- general form elements -->
+						<div class="card card-primary">
+							<div class="card-header">
+								<h3 class="card-title">Guest registration form</h3>
+							</div>
+							<!-- /.card-header -->
+							<!-- form start -->
+							<form method="POST" th:object="${guestForm}">
+								<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+								<div class="card-body">
+
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="firstName">First Name</label> <input type="text"
+													class="form-control" th:field="*{firstName}">
+												<ul>
+													<li class="text-danger" th:each="erro : ${#fields.errors('firstName')}"
+														th:text="${erro}"></li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="lastName">Last Name</label> <input type="text"
+													class="form-control" th:field="*{lastName}">
+												<ul>
+													<li class="text-danger"
+														th:each="erro : ${#fields.errors('lastName')}"
+														th:text="${erro}"></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-sm-4">
+											<div class="form-group">
+												<label for="phoneNumber">Phone Number</label> <input type="text"
+													class="form-control" th:field="*{phoneNumber}">
+												<ul>
+													<li class="text-danger"
+														th:each="erro : ${#fields.errors('phoneNumber')}"
+														th:text="${erro}"></li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="col-md-4 col-sm-4">
+											<div class="form-group">
+												<label for="birthDate">Birth Date</label>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">
+															<i class="far fa-calendar-alt"></i>
+														</span>
+													</div>
+													<input type="text" class="form-control float-right" 
+														id="birthDate" th:field="*{birthDate}">
+
+												</div>
+												<ul>
+													<li class="text-danger"
+														th:each="erro : ${#fields.errors('birthDate')}"
+														th:text="${erro}">
+													</li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="col-md-4 col-sm-4">
+											<div class="form-group">
+												<label for="nationality">Nationality</label> <input type="text"
+													class="form-control" th:field="*{nationality}">
+												<ul>
+													<li class="text-danger"
+														th:each="erro : ${#fields.errors('nationality')}"
+														th:text="${erro}"></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /.card-body -->
+
+								<div class="card-footer">
+									<button class="btn btn-primary" type="submit">Submit</button>
+								</div>
+							</form>
+						</div>
+						<!-- /.card -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<th:block layout:fragment="script">
+
+		<script>
+			$(function () {
+				$("#birthDate").daterangepicker({
+					singleDatePicker: true,
+					showDropdowns: true,
+					minYear: 1901,
+					maxYear: parseInt(moment().format('YYYY'), 10),
+					locale: {
+						format: 'DD/MM/YYYY',
+					}
+				});
+			});
+		</script>
+
+	</th:block>
+
+	<body>
+
+</html>

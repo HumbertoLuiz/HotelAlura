@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html layout:decorate="~{/shared/layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Add Profile</title>
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Profile</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item active">Profile</li>
+						</ol>
+					</div>
+				</div>
+			</div><!-- /.container-fluid -->
+		</section>
+
+		<!-- Main content -->
+		<section class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<!-- left column -->
+					<div class="col-md-12">
+						<!-- general form elements -->
+						<div class="card card-primary">
+							<div class="card-header">
+								<h3 class="card-title">Profile registration form</h3>
+							</div>
+							<!-- /.card-header -->
+							<!-- form start -->
+							<form method="POST" th:object="${insertForm}">
+								<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+								<div class="card-body">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="name">Role Name</label> <input type="text"
+													class="form-control" th:field="*{name}">
+												<ul>
+													<li class="text-danger"
+														th:each="erro : ${#fields.errors('name')}"
+														th:text="${erro}"></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /.card-body -->
+								<div class="card-footer">
+									<button class="btn btn-primary" type="submit">Submit</button>
+								</div>
+							</form>
+						</div>
+						<!-- /.card -->
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<th:block layout:fragment="script">
+
+	</th:block>
+</body>
+
+</html>

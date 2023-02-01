@@ -1,0 +1,154 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #08192b;">
+	<!-- Brand Logo -->
+	<a class="brand-link" th:href="@{admin/home}">
+		<img alt="Logo" class="brand-image img-circle elevation-3" th:src="@{/img/coffee.svg}">
+		<span class="brand-text font-weight-light" style="font-size: 24px;"><b>Hotel Alura</b></span>
+	</a>
+
+	<!-- Sidebar -->
+	<div class="sidebar">
+		<!-- Sidebar user panel (optional) -->
+		<div sec:authorize="isAuthenticated()" class="user-panel mt-3 pb-3 mb-3 d-flex">
+			<div class="image">
+				<img alt="User" class="img-circle elevation-2" th:src="@{/img/man.png}">
+			</div>
+			<div class="info">
+				<a class="d-block" href="#">
+					<span style='color:rgb(255, 255, 255)' 
+						sec:authentication="name">
+					</span>
+				</a>
+			</div>
+		</div>
+
+		<!-- Sidebar Menu -->
+		<nav class="mt-2">
+
+			<ul class="nav nav-pills nav-sidebar flex-column" data-accordion="false" data-widget="treeview" role="menu">
+				<!-- Add icons to the links using the .nav-icon class
+                     with font-awesome or any other icon font library -->
+
+				<!-- _______________________________________________________________________________ -->
+
+				<li class="nav-item has-treeview">
+					<a class="nav-link" href="#">
+						<img th:src="@{/img/user.svg}" style="padding-left: 3px; margin-right: 8px;">
+						<p>
+							User
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/admin/users}">
+								<img th:src="@{/img/search.png}"
+									style="width:20px; padding-left: 3px; margin-right: 8px;">
+								<p>List User</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/admin/users/save}">
+								<img th:src="@{/img/add (1).png}"
+									style="width:22px; padding-left: 3px; margin-right: 8px;">
+								<p>Add User</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<!-- _______________________________________________________________________________ -->
+
+
+				<li class="nav-item has-treeview">
+					<a class="nav-link" href="#">
+						<img th:src="@{/img/user.svg}" style="padding-left: 3px; margin-right: 8px;">
+						<p>
+							Profile
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/admin/roles}">
+								<img th:src="@{/img/search.png}"
+									style="width:20px; padding-left: 3px; margin-right: 8px;">
+								<p>List User Profile</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/admin/roles/save}">
+								<img th:src="@{/img/add (1).png}"
+									style="width:22px; padding-left: 3px; margin-right: 8px;">
+								<p>Add New User Profile</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<!-- _______________________________________________________________________________ -->
+
+
+				<li class="nav-item has-treeview">
+					<a class="nav-link" href="#">
+						<img th:src="@{/img/check-out.svg}" style="padding-left: 3px; margin-right: 8px;">
+						<p>
+							Guest
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/admin/guests}">
+								<img th:src="@{/img/search.png}"
+									style="width:20px; padding-left: 3px; margin-right: 8px;">
+								<p>List Guest</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/admin/guests/save}">
+								<img th:src="@{/img/add (1).png}"
+									style="width:22px; padding-left: 3px; margin-right: 8px;">
+								<p>Add Guest</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<!-- _______________________________________________________________________________ -->
+
+
+				<li class="nav-item has-treeview">
+					<a class="nav-link" href="#">
+						<img th:src="@{/img/online-reservation.svg}" style="padding-left: 3px; margin-right: 8px;">
+						<p>
+							Reserve
+							<i class="right fas fa-angle-left"></i>
+						</p>
+					</a>
+					<ul class="nav nav-treeview">
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/admin/reserves}">
+								<img th:src="@{/img/search.png}"
+									style="width:20px; padding-left: 3px; margin-right: 8px;">
+								<p>List Reserves</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/admin/reserves/save}">
+								<img th:src="@{/img/add (1).png}"
+									style="width:22px; padding-left: 3px; margin-right: 8px;">
+								<p>Add Reserve</p>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<!-- _______________________________________________________________________________ -->
+
+			</ul>
+		</nav>
+		<!-- /.sidebar-menu -->
+	</div>
+	<!-- /.sidebar -->
+</aside>

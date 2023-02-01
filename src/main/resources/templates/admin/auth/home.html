@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html layout:decorate="/shared/layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Hotel Alura</title>
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>Hole Alura</h1>
+					</div>
+				</div>
+			</div><!-- /.container-fluid -->
+		</section>
+		<!-- Main content -->
+		<section class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">			
+							<!-- /.card-header -->
+							<div class="card-body">
+							
+									<p><a href="users/change-password">Troca de senha </a></p>
+									
+									<div sec:authorize="isAuthenticated()">
+										User: <span sec:authentication="name"></span><br>
+										Roles: <span sec:authentication="principal.authorities"></span>
+									</div>
+
+									<h2>Authorization Test</h2>
+
+									<h3>Admin role</h3>
+
+									<div th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+										(1.1) - only user with profile ADMIN can see.
+									</div>
+
+									<div th:if="${#authorization.expression('hasAnyRole(''ADMIN'')')}">
+										(1.2) - only user with profile ADMIN can see.
+									</div>
+
+									<div th:if="${#authorization.expression('hasAnyRole(''ROLE_ADMIN'')')}">
+										(1.3) - only user with profile ADMIN can see.
+									</div>
+
+									<hr>
+
+									<h3>User role</h3>
+
+									<div th:if="${#authorization.expression('hasRole(''USER'')')}">
+										(2.1) - only user with profile USER can see.
+									</div>
+
+									<div th:if="${#authorization.expression('hasAnyRole(''USER'')')}">
+										(2.2) - only user with profile USER can see.
+									</div>
+
+									<div sec:authorize="hasRole('USER')">
+										(2.3) - only user with profile USER can see.
+									</div>
+
+									<hr>
+
+									<h3>User guest</h3>
+
+									<div th:if="${#authorization.expression('hasRole(''GUEST'')')}">
+										(3.1) - only user with profile GUEST can see.
+									</div>
+
+									<div th:if="${#authorization.expression('hasAnyRole(''GUEST'')')}">
+										(3.2) - only user with profile GUEST can see.
+									</div>
+
+									<div sec:authorize="hasRole('GUEST')">
+										(3.3) - only user with profile GUEST can see.
+									</div>
+									<hr>
+							</div>
+							<!-- /.card-body -->
+						</div>
+						<!-- /.card -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Main content -->
+	</div>
+	<th:block layout:fragment="script">
+
+	</th:block>
+</body>
+
+</html>
