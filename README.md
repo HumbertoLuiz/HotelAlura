@@ -44,9 +44,9 @@ http://localhost:8080/admin/login
 
 ### Telas:
 
-[![Prévia do Projeto](https://github.com/humbertoluiz/HotelAlura/initialPage.png#readme)]
+[![Prévia do Projeto](https://github.com/HumbertoLuiz/HotelAlura/initialPage.png)]
 
-[![Prévia do Projeto](https://github.com/humbertoluiz/HotelAlura/users.png#readme)]
+[![Prévia do Projeto](https://github.com/HumbertoLuiz/HotelAlura/users.png)]
 
 
 Humberto Luiz 
