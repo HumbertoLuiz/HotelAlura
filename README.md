@@ -44,9 +44,15 @@ http://localhost:8080/admin/login
 ### Telas:
 ---
 
+<<<<<<< HEAD
 ![initialPage](https://user-images.githubusercontent.com/54385959/216165433-d57ee6c7-5a4c-4633-8a3d-186e285977b7.png)
 
 ---
+=======
+[![Prévia do Projeto](https://github.com/HumbertoLuiz/HotelAlura/initialPage.png)]
+
+[![Prévia do Projeto](https://github.com/HumbertoLuiz/HotelAlura/users.png)]
+>>>>>>> 836a0d8a29b6b89a14c5634bd3e6ec787664d1e3
 
 ![users](https://user-images.githubusercontent.com/54385959/216165967-b000ff74-fb3a-466b-bf85-683b6537ced1.png)
 
