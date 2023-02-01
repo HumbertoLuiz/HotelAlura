@@ -32,10 +32,10 @@ public class SecurityConfig {
 		return authenticationConfiguration.getAuthenticationManager();
 	}
 
-	@Value("${com.learning.rememberMe.key}")
+	@Value("${hotel.project.rememberMe.key}")
 	private String rememberMeKey;
 
-	@Value("${com.learning.rememberMe.validitySeconds}")
+	@Value("${hotel.project.rememberMe.validitySeconds}")
 	private int rememberMeValiditySeconds;
 
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {

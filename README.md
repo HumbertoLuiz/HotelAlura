@@ -22,11 +22,10 @@
   * Vá até a aba Boot Dashboard, abra o icone local e clique em cima do projeto com o botão direito do mouse e aperte o play
   ```
   após executar os passos acima, verificar se aparece 8080 do lado do projeto e basta abrir o seguinte endereço e visualizar a execução do projeto:
-
+  
 ```
 http://localhost:8080/admin/login
 ```
-
 ## Tecnologias utilizadas para a execução do projeto 🛠
 
 * Spring Tools Suite 4
@@ -43,11 +42,15 @@ http://localhost:8080/admin/login
 * Postman
 
 ### Telas:
+---
 
-[![Prévia do Projeto](https://github.com/humbertoluiz/HotelAlura/initialPage.png#readme)]
+![initialPage](https://user-images.githubusercontent.com/54385959/216165433-d57ee6c7-5a4c-4633-8a3d-186e285977b7.png)
 
-[![Prévia do Projeto](https://github.com/humbertoluiz/HotelAlura/users.png#readme)]
+---
 
+![users](https://user-images.githubusercontent.com/54385959/216165967-b000ff74-fb3a-466b-bf85-683b6537ced1.png)
+
+---
 
 Humberto Luiz 
 <div>
