@@ -44,6 +44,12 @@ public class UserController {
 		return modelAndView;
 	}
 
+	@ModelAttribute("roles")
+	public Iterator<Role> getRoles() {
+		List<Role> role = daoRol.findAll();
+		Iterator<Role> getRole = role.iterator();
+		return getRole;
+	}
 	
 	@GetMapping("/save")
 	public ModelAndView save() {
@@ -69,15 +75,6 @@ public class UserController {
 		return "redirect:/admin/users";
 	}
 
-
-	@ModelAttribute("roles")
-	public Iterator<Role> getRoles() {
-		List<Role> role = daoRol.findAll();
-		Iterator<Role> getRole = role.iterator();
-		return getRole;
-	}
-	
-	
 	@GetMapping("/{id}/update")
 	public ModelAndView update(@PathVariable Long id) {
 		var modelAndView = new ModelAndView("admin/user/user_update");

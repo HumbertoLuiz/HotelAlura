@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import hotel.project.core.exceptions.ValidatingException;
 import hotel.project.web.dtos.FlashMessage;
 import hotel.project.web.dtos.RoleDto;
@@ -23,10 +22,8 @@ import jakarta.validation.Valid;
 @RequestMapping("/admin/roles")
 public class RoleController {
 
-
 	@Autowired
 	private RoleService roleService;
-
 	
 	@GetMapping
 	public ModelAndView findAll() {
@@ -34,7 +31,6 @@ public class RoleController {
 		modelAndView.addObject("roles", roleService.findAll());
 		return modelAndView;
 	}
-
 	
 	@GetMapping("/save")
 	public ModelAndView save() {
@@ -43,9 +39,8 @@ public class RoleController {
 		return modelAndView;
 	}
 	
-
 	@PostMapping("/save")
-	public String insert(@Valid @ModelAttribute("insertForm") RoleDto insertForm, Long id, BindingResult result,
+	public String save(@Valid @ModelAttribute("insertForm") RoleDto insertForm, Long id, BindingResult result,
 			RedirectAttributes attrs) {
 		if (result.hasErrors()) {
 			return "admin/role/role_form";
@@ -61,7 +56,7 @@ public class RoleController {
 		return "redirect:/admin/roles";
 	}
 
-	
+
 	@GetMapping("/{id}/update")
 	public ModelAndView update(@PathVariable Long id) {
 		var modelAndView = new ModelAndView("admin/role/role_form");
