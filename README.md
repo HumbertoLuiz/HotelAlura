@@ -44,7 +44,7 @@ http://localhost:8080/admin/login
 ### Telas:
 ---
 
-![initialPage](https://user-images.githubusercontent.com/54385959/216165433-d57ee6c7-5a4c-4633-8a3d-186e285977b7.png)
+![initialPage](https://user-images.githubusercontent.com/54385959/219227084-20ca24ec-046a-4bfd-9b4f-116e5dd975e9.png)
 
 ---
 
